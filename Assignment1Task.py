@@ -100,6 +100,8 @@ class Assignment1:
                 self.machineSleep()
                 # Machine wakes up and sends a print request
                 # Write code here
+                if  not self.outer.sim_active:
+                    break
                 self.outer.lock.acquire()
                 self.printRequest(self.machineID)
                 self.outer.lock.relase()
